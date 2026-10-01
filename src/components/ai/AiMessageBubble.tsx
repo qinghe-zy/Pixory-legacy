@@ -24,6 +24,7 @@ import type { AiStreamingMessageIdentity } from '../../ai/aiStreamingMessageStor
 import type { AiMessageAttachmentRecord } from '../../database/repositories/aiThreadRepository';
 import type { AiTailSegmentEdge } from '../../ai/aiStreamingTailRenderContract';
 
+import { AI_SYSTEM_AVATAR_B64 } from '../../utils/aiSystemAvatarBase64';
 const AI_SYSTEM_AVATAR = require('../../../assets/ai_system_avatar.png');
 
 interface AiMessageBubbleProps {
@@ -386,7 +387,7 @@ function AiMessageBubbleComponent({
             {showAssistantAvatar ? (
               <View style={styles.avatar}>
                 {isSystemAssistant ? (
-                  <ExpoImage source={AI_SYSTEM_AVATAR} style={styles.avatarImage} />
+                  <ExpoImage source={{ uri: AI_SYSTEM_AVATAR_B64 }} style={styles.avatarImage} />
                 ) : assistantAvatar?.avatarUri ? (
                   <SecureImage contentFit="cover" space={space} style={styles.avatarImage} uri={assistantAvatar.avatarUri} />
                 ) : (

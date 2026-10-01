@@ -29,6 +29,7 @@ import {
 
 import { searchActions, getRandomRecommendedActions, type MatchedAction } from '../services/searchActionService';
 
+import { AI_SYSTEM_AVATAR_B64 } from '../utils/aiSystemAvatarBase64';
 const AI_SYSTEM_AVATAR = require('../../assets/ai_system_avatar.png');
 
 interface GlobalSearchScreenProps {
@@ -1768,7 +1769,7 @@ function ActionSection({ items, onOpenAction, space }: { items: MatchedAction[];
           <View style={actionStyles.actionIconBox}>
             {item.id === 'system-assistant-toggle' ? (
               <ExpoImage
-                source={AI_SYSTEM_AVATAR}
+                source={{ uri: AI_SYSTEM_AVATAR_B64 }}
                 style={{ width: '100%', height: '100%', borderRadius: 12 }}
                 contentFit="cover"
               />

@@ -25,6 +25,7 @@ import { formatAiFullMinute } from '../utils/aiTimeFormatters';
 import { recordDiagnosticEvent } from '../diagnostics/diagnosticLogger';
 import { globalScrollState } from '../utils/scrollState';
 import { FloatingFooterContext } from '../components/AppScreen';
+import { AI_SYSTEM_AVATAR_B64 } from '../utils/aiSystemAvatarBase64';
 
 const primaryCardPatternImage = require('../../assets/backgrounds/japanese-fresh/elements/botanical-branch.png');
 const AI_SYSTEM_AVATAR = require('../../assets/ai_system_avatar.png');
@@ -624,7 +625,7 @@ function ThreadAvatar({ thread, space }: { thread: AiHomeThreadItem; space: Pixo
   if (thread.id === 'pixory-system-assistant') {
     return (
       <ExpoImage
-        source={AI_SYSTEM_AVATAR}
+        source={{ uri: AI_SYSTEM_AVATAR_B64 }}
         style={styles.threadAvatarImage}
       />
     );
