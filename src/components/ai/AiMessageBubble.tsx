@@ -1,4 +1,5 @@
 import { Image } from 'react-native';
+import { Image as ExpoImage } from 'expo-image';
 import { memo, useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -385,7 +386,7 @@ function AiMessageBubbleComponent({
             {showAssistantAvatar ? (
               <View style={styles.avatar}>
                 {isSystemAssistant ? (
-                  <Image source={AI_SYSTEM_AVATAR} style={styles.avatarImage} />
+                  <ExpoImage source={AI_SYSTEM_AVATAR} style={styles.avatarImage} />
                 ) : assistantAvatar?.avatarUri ? (
                   <SecureImage contentFit="cover" space={space} style={styles.avatarImage} uri={assistantAvatar.avatarUri} />
                 ) : (
